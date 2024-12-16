@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+generator client {
+  provider = "prisma-client-js"
+  seed     = "prisma/seed.ts"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id        String     @id @default(cuid())
+  title     String
+  barcode   String     @unique
+  quantity  Int
+  section   String
+  category  String
+  updateAt  DateTime   @updatedAt
+  createdAt DateTime   @default(now())
+  borrowed  Borrowed[]
+}
+
+model Borrowed {
+  id            String   @id @default(cuid())
+  student_name  String   @unique
+  student_class String
+  teacher       String?  @unique
+  quantity      Int
+  due           String
+  book          Book     @relation(fields: [bookId], references: [id])
+  bookId        String
+  updateAt      DateTime @updatedAt
+  createdAt     DateTime @default(now())
+}
+
+// model Lost {
+//   id String @id @default(cuid())
+
+// }
+
+//reseting and seeding

@@ -1,0 +1,53 @@
+{
+  "name": "library",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "email": "email dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "@prisma/client": "6.0.1",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-tabs": "^1.1.2",
+    "@tanstack/react-table": "^8.20.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "easy-peasy": "^6.0.5",
+    "lucide-react": "^0.468.0",
+    "next": "15.0.2",
+    "next-client-cookies": "^2.0.0",
+    "react": "19.0.0-rc-02c0e824-20241028",
+    "react-barcode": "^1.5.3",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "react-hot-toast": "^2.4.1",
+    "react-qr-barcode-scanner": "^2.0.0",
+    "react-sound": "^1.2.0",
+    "sonner": "^1.7.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^1.1.2",
+    "xlsx": "^0.18.5",
+    "zod": "^3.24.1",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-sound": "^1.2.6",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.2",
+    "postcss": "^8",
+    "prisma": "^6.0.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
