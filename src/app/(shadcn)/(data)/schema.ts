@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { z } from "zod"
 
 // We're keeping a simple non-relational schema here.

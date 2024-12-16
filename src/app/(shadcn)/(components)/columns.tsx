@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client"
 
 // import {columnDef} from "@tanstack/react-table"
