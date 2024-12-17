@@ -49,3 +49,6 @@ const category = (await books).filter((obj, index, self) => index === self.findI
 export default Table
 //TODO: addd zod and zustand and intregate with dizzle and shadcn
 //TODO: deploying error server errors  problem I think was environwmnt
+
+
+

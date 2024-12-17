@@ -17,8 +17,8 @@ export default function Home() {
         <p className="text-gray-600 mb-2">
         To add a book you first nned to scan the book barcode or qrcode after that a form will appear to enter details
         </p>
-    </VaulDrawer>   
-   <VaulDrawer title="Borrow a book">
+     </VaulDrawer>   
+    <VaulDrawer title="Borrow a book">
     <p className="text-gray-600 mb-2">
      Scan the book barcode to mark it as borrowed.
               </p>

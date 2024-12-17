@@ -10,11 +10,15 @@ export const useWithSound = (audioSource: any) => {
  // play the sund
   const playSound = () => {
     soundRef.current?.play();
+    };
+     const pauseSound = () => {
+    soundRef.current?.pause();
   };
-
 //s
     return {
-        playSound
+        playSound,
+        pauseSound
     }
-
 }
+
+

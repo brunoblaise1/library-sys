@@ -9,7 +9,6 @@ import { useCookies } from 'next-client-cookies';
 import { toast } from 'sonner';
 import Sound from 'react-sound'
 import { useWithSound } from '@/lib/useWithSound';
-
 export default function VaulDrawer({children, title}: {
     children: ReactNode,
     title: string,
@@ -54,7 +53,6 @@ export default function VaulDrawer({children, title}: {
     printAble.document.close()
     printAble.print()
   }
-
   //handle inputs 
   const handleInput = (e: { target: { name: string; value: string; }; }) => {
     const { name, value } = e.target
@@ -83,12 +81,14 @@ export default function VaulDrawer({children, title}: {
     toast.error(cookies.get("createBookF"))
     cookies.remove("createBookF")
   }
-  const { playSound: playSound } = useWithSound('/beep.wave')
+  const { playSound: playSound } = useWithSound('/beep.mp3')
   // playing the sund 
   if (barcode !== null) {
      playSound()
   }
   return (
+    <>
+      <button onClick={()=>  playSound()}>play</button>
     <Drawer.Root>
       <Drawer.Trigger >
         <div className="bg-slate-50 p-2 text-slate-400 rounded-xl hover:bg-slate-600 hover:text-slate-300">
@@ -212,6 +212,8 @@ export default function VaulDrawer({children, title}: {
           </div>
         </Drawer.Content>
       </Drawer.Portal>
-    </Drawer.Root>
+      </Drawer.Root>
+      </>
   );
+  
 }
