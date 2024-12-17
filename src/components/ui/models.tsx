@@ -88,7 +88,6 @@ export default function VaulDrawer({children, title}: {
   }
   return (
     <>
-      <button onClick={()=>  playSound()}>play</button>
     <Drawer.Root>
       <Drawer.Trigger >
         <div className="bg-slate-50 p-2 text-slate-400 rounded-xl hover:bg-slate-600 hover:text-slate-300">
